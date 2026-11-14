@@ -1,0 +1,47 @@
+filters:
+  and:
+    - file.inFolder("docs/09-Interfaces")
+    - tipo == "interfaz"
+properties:
+  id:
+    displayName: ID
+  nombre:
+    displayName: Pantalla
+  tarea_codex:
+    displayName: Tarea Codex
+  figma_frame:
+    displayName: Frame Figma
+views:
+  - type: table
+    name: Todas las interfaces
+    order:
+      - id
+      - nombre
+      - prioridad
+      - estado_diseno
+      - estado_implementacion
+      - tarea_codex
+      - figma_frame
+    sort:
+      - property: id
+        direction: ASC
+  - type: table
+    name: Sin diseño en Figma
+    filters:
+      and:
+        - figma_frame == ""
+    order:
+      - id
+      - nombre
+      - prioridad
+      - tarea_codex
+  - type: table
+    name: Pendientes de implementar
+    filters:
+      and:
+        - estado_implementacion != "implementada"
+    order:
+      - id
+      - nombre
+      - estado_diseno
+      - tarea_codex

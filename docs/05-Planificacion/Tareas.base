@@ -1,0 +1,107 @@
+filters:
+  and:
+    - file.inFolder("docs/06-Tareas")
+    - tipo == "tarea-codex"
+properties:
+  file.name:
+    displayName: Tarea
+  titulo:
+    displayName: Título
+  depende_de:
+    displayName: Dependencias
+  fecha_actualizacion:
+    displayName: Actualizada
+views:
+  - type: table
+    name: Todas las tareas
+    order:
+      - file.name
+      - titulo
+      - estado
+      - prioridad
+      - fase
+      - depende_de
+      - fecha_actualizacion
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Documentadas (estado lista)
+    filters:
+      and:
+        - estado == "lista"
+    order:
+      - file.name
+      - titulo
+      - prioridad
+      - fase
+      - depende_de
+    sort:
+      - property: depende_de
+        direction: ASC
+      - property: fase
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: En progreso
+    filters:
+      and:
+        - estado == "en_progreso"
+    order:
+      - file.name
+      - titulo
+      - responsable
+      - fecha_actualizacion
+  - type: table
+    name: En revision
+    filters:
+      and:
+        - estado == "en_revision"
+    order:
+      - file.name
+      - titulo
+      - responsable
+      - fecha_actualizacion
+  - type: table
+    name: Bloqueadas
+    filters:
+      and:
+        - estado == "bloqueada"
+    order:
+      - file.name
+      - titulo
+      - depende_de
+      - fecha_actualizacion
+  - type: table
+    name: Borradores
+    filters:
+      and:
+        - estado == "borrador"
+    order:
+      - file.name
+      - titulo
+      - fase
+      - depende_de
+  - type: table
+    name: Completadas
+    filters:
+      and:
+        - estado == "hecha"
+    order:
+      - file.name
+      - titulo
+      - fecha_actualizacion
+  - type: table
+    name: Por fase
+    groupBy:
+      property: fase
+      direction: ASC
+    order:
+      - file.name
+      - titulo
+      - estado
+      - prioridad
+    sort:
+      - property: file.name
+        direction: ASC

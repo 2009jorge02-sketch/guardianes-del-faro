@@ -1,0 +1,21 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("docs")
+    - '!file.inFolder("docs/_plantillas")'
+properties:
+  file.mtime:
+    displayName: Modificada
+  file.folder:
+    displayName: Carpeta
+views:
+  - type: table
+    name: Modificados recientemente
+    limit: 12
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC

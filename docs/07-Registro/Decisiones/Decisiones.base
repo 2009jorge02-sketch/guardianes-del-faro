@@ -1,0 +1,32 @@
+filters:
+  and:
+    - file.inFolder("docs/07-Registro/Decisiones")
+    - 'file.ext == "md"'
+properties:
+  id:
+    displayName: ADR
+  titulo:
+    displayName: Decisión
+views:
+  - type: table
+    name: Todas las decisiones
+    order:
+      - id
+      - titulo
+      - estado
+      - fecha
+      - decide
+    sort:
+      - property: id
+        direction: ASC
+  - type: table
+    name: Pendientes
+    filters:
+      or:
+        - 'estado.contains("pendiente")'
+        - 'estado.contains("propuesta")'
+    order:
+      - id
+      - titulo
+      - estado
+      - decide

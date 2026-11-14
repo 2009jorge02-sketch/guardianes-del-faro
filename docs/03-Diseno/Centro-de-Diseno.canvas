@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"g1","type":"group","x":0,"y":0,"width":380,"height":410,"label":"Concepto del juego","color":"6"},
+		{"id":"concepto","type":"file","file":"docs/01-Vision/Concepto.md","x":20,"y":60,"width":340,"height":90},
+		{"id":"pilares","type":"file","file":"docs/01-Vision/Pilares.md","x":20,"y":170,"width":340,"height":90},
+		{"id":"gdd","type":"file","file":"docs/03-Diseno/GDD.md","x":20,"y":280,"width":340,"height":110,"color":"6"},
+		{"id":"g2","type":"group","x":460,"y":0,"width":380,"height":360,"label":"Bucle principal y mecánicas","color":"4"},
+		{"id":"bucle","type":"text","text":"**Bucle principal**\n\nEntrar → luchar la noche (apuntar luz) → mejora de carta → siguiente noche → resultado → recompensa de cuenta → nueva partida.\n\nFuente: GDD §3.","x":480,"y":60,"width":340,"height":150},
+		{"id":"mecanicas","type":"file","file":"docs/03-Diseno/Mecanicas.md","x":480,"y":230,"width":340,"height":100},
+		{"id":"g3","type":"group","x":920,"y":0,"width":380,"height":300,"label":"Progresión y economía","color":"3"},
+		{"id":"prog","type":"file","file":"docs/03-Diseno/Progresion-Economia.md","x":940,"y":60,"width":340,"height":100},
+		{"id":"mon","type":"file","file":"docs/03-Diseno/Monetizacion.md","x":940,"y":180,"width":340,"height":100},
+		{"id":"g5","type":"group","x":0,"y":490,"width":380,"height":190,"label":"Escenarios","color":"5"},
+		{"id":"mapas","type":"file","file":"docs/03-Diseno/Mapas.md","x":20,"y":550,"width":340,"height":100},
+		{"id":"g4","type":"group","x":460,"y":440,"width":380,"height":190,"label":"Enemigos","color":"1"},
+		{"id":"enemigos","type":"file","file":"docs/03-Diseno/Enemigos.md","x":480,"y":500,"width":340,"height":100},
+		{"id":"g6","type":"group","x":920,"y":380,"width":380,"height":190,"label":"Interfaz","color":"2"},
+		{"id":"ui","type":"file","file":"docs/09-Interfaces/Interfaces.md","x":940,"y":440,"width":340,"height":100},
+		{"id":"g7","type":"group","x":460,"y":710,"width":380,"height":190,"label":"Recursos 3D","color":"2"},
+		{"id":"cat3d","type":"file","file":"docs/08-Recursos-3D/Catalogo-3D.md","x":480,"y":770,"width":340,"height":100},
+		{"id":"g8","type":"group","x":920,"y":640,"width":380,"height":300,"label":"Arquitectura técnica","color":"5"},
+		{"id":"arch","type":"file","file":"docs/04-Arquitectura/ARCHITECTURE.md","x":940,"y":700,"width":340,"height":100},
+		{"id":"rend","type":"file","file":"docs/04-Arquitectura/Rendimiento.md","x":940,"y":820,"width":340,"height":100}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"concepto","fromSide":"bottom","toNode":"pilares","toSide":"top"},
+		{"id":"e2","fromNode":"pilares","fromSide":"bottom","toNode":"gdd","toSide":"top"},
+		{"id":"e3","fromNode":"gdd","fromSide":"right","toNode":"bucle","toSide":"left","label":"define"},
+		{"id":"e4","fromNode":"bucle","fromSide":"bottom","toNode":"mecanicas","toSide":"top","label":"se concreta en"},
+		{"id":"e5","fromNode":"mecanicas","fromSide":"right","toNode":"prog","toSide":"left","label":"alimenta"},
+		{"id":"e6","fromNode":"prog","fromSide":"bottom","toNode":"mon","toSide":"top"},
+		{"id":"e7","fromNode":"mecanicas","fromSide":"bottom","toNode":"enemigos","toSide":"top","label":"define"},
+		{"id":"e8","fromNode":"mapas","fromSide":"right","toNode":"enemigos","toSide":"left"},
+		{"id":"e9","fromNode":"mecanicas","fromSide":"right","toNode":"ui","toSide":"top","label":"se muestra en"},
+		{"id":"e10","fromNode":"enemigos","fromSide":"bottom","toNode":"cat3d","toSide":"top","label":"necesita"},
+		{"id":"e11","fromNode":"mapas","fromSide":"bottom","toNode":"cat3d","toSide":"left","label":"necesita"},
+		{"id":"e12","fromNode":"cat3d","fromSide":"right","toNode":"arch","toSide":"left"},
+		{"id":"e13","fromNode":"arch","fromSide":"bottom","toNode":"rend","toSide":"top"},
+		{"id":"e14","fromNode":"arch","fromSide":"top","toNode":"ui","toSide":"bottom"}
+	]
+}

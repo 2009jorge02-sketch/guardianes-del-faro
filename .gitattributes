@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Luau: LF line endings (consistent with stylua.toml)
+*.luau text eol=lf
+*.lua text eol=lf

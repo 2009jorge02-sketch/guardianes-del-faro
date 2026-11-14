@@ -1,0 +1,28 @@
+filters:
+  and:
+    - file.inFolder("docs/07-Registro/Pruebas")
+    - 'tipo == "prueba"'
+properties:
+  tarea:
+    displayName: Tarea
+views:
+  - type: table
+    name: Todas las pruebas
+    order:
+      - file.name
+      - tarea
+      - plataforma
+      - resultado
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC
+  - type: table
+    name: Con resultado negativo
+    filters:
+      and:
+        - 'resultado == "fallida"'
+    order:
+      - file.name
+      - tarea
+      - fecha

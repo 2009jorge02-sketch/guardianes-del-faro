@@ -1,0 +1,33 @@
+# Obsidian: estado local (no versionar)
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Roblox / herramientas (futuro)
+*.rbxl.lock
+*.rbxlx.lock
+sourcemap.json
+Packages/
+DevPackages/
+node_modules/
+
+# Claude Code local
+.claude/settings.local.json
+
+# Compilaciones Rojo
+build/
+*.rbxl
+*.rbxlx
+
+# Copia de seguridad local de la configuración del vault (no versionar)
+.obsidian-backup-*/
+
+# Archivo comprimido de copia del vault (no versionar)
+.obsidian.zip
+*.zip

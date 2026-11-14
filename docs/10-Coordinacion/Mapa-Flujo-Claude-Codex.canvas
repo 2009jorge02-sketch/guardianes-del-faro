@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {"id": "g1", "type": "group", "x": 0, "y": 0, "width": 420, "height": 460, "label": "Claude Code", "color": "6"},
+    {"id": "c1", "type": "text", "text": "**Planifica**\nInvestiga, diseña, crea TASK-NNN (estado `lista`), fichas RES y UI.", "x": 20, "y": 60, "width": 380, "height": 110},
+    {"id": "c2", "type": "text", "text": "**Revisa**\nComprueba evidencias; marca `hecha` o crea TASK-NNN-fix / registra error.", "x": 20, "y": 300, "width": 380, "height": 110},
+    {"id": "repo", "type": "group", "x": 520, "y": 0, "width": 420, "height": 460, "label": "Archivos compartidos y Git", "color": "5"},
+    {"id": "r1", "type": "file", "file": "docs/05-Planificacion/Tareas.base", "x": 540, "y": 60, "width": 380, "height": 90},
+    {"id": "r2", "type": "file", "file": "docs/07-Registro/PROGRESS.md", "x": 540, "y": 170, "width": 380, "height": 90},
+    {"id": "r3", "type": "file", "file": "docs/10-Coordinacion/Centro-de-Control.md", "x": 540, "y": 280, "width": 380, "height": 90},
+    {"id": "g2", "type": "group", "x": 1040, "y": 0, "width": 420, "height": 460, "label": "Codex", "color": "4"},
+    {"id": "x1", "type": "text", "text": "**Ejecuta**\nToma la primera tarea `lista`, pasa a `en_progreso`, programa en su rama `codex/task-NNN-slug`.", "x": 1060, "y": 60, "width": 380, "height": 110},
+    {"id": "x2", "type": "text", "text": "**Informa**\nRellena «Informe final», pasa a `en_revision` y anota en PROGRESS.", "x": 1060, "y": 300, "width": 380, "height": 110},
+    {"id": "user", "type": "text", "text": "**Usuario**\nLanza cada herramienta y aprueba lo sensible (commits, push, costes, instalaciones). No hay comunicación automática entre Claude y Codex.", "x": 520, "y": 540, "width": 420, "height": 130, "color": "3"},
+    {"id": "a1", "type": "file", "file": "AGENTS.md", "x": 1040, "y": 540, "width": 420, "height": 90},
+    {"id": "a2", "type": "file", "file": "CLAUDE.md", "x": 0, "y": 540, "width": 420, "height": 90}
+  ],
+  "edges": [
+    {"id": "e1", "fromNode": "c1", "fromSide": "right", "toNode": "r1", "toSide": "left", "label": "escribe tarea"},
+    {"id": "e2", "fromNode": "r1", "fromSide": "right", "toNode": "x1", "toSide": "left", "label": "lee tarea"},
+    {"id": "e3", "fromNode": "x1", "fromSide": "bottom", "toNode": "x2", "toSide": "top"},
+    {"id": "e4", "fromNode": "x2", "fromSide": "left", "toNode": "r2", "toSide": "right", "label": "registra"},
+    {"id": "e5", "fromNode": "r2", "fromSide": "left", "toNode": "c2", "toSide": "right", "label": "lee informe"},
+    {"id": "e6", "fromNode": "c2", "fromSide": "top", "toNode": "c1", "toSide": "bottom", "label": "fix o siguiente tarea"},
+    {"id": "e7", "fromNode": "user", "fromSide": "top", "toNode": "r3", "toSide": "bottom", "label": "supervisa"},
+    {"id": "e8", "fromNode": "a1", "fromSide": "top", "toNode": "x2", "toSide": "bottom", "label": "reglas"},
+    {"id": "e9", "fromNode": "a2", "fromSide": "top", "toNode": "c2", "toSide": "bottom", "label": "reglas"}
+  ]
+}

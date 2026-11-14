@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"arch","type":"file","file":"docs/04-Arquitectura/ARCHITECTURE.md","x":0,"y":-200,"width":360,"height":120,"color":"6"},
+		{"id":"leyenda","type":"text","text":"**Dependencias entre tareas** (flecha: la tarea de origen debe estar hecha antes).\nVerde: Fase 1 · Morado: Fase 2 (congelada hasta validar el prototipo). Estados reales en Tareas.base.","x":0,"y":600,"width":360,"height":140},
+		{"id":"t1","type":"file","file":"docs/06-Tareas/TASK-001.md","x":0,"y":300,"width":320,"height":100,"color":"4"},
+		{"id":"t2","type":"file","file":"docs/06-Tareas/TASK-002.md","x":400,"y":300,"width":320,"height":100,"color":"4"},
+		{"id":"t3","type":"file","file":"docs/06-Tareas/TASK-003.md","x":800,"y":300,"width":320,"height":100,"color":"4"},
+		{"id":"t4","type":"file","file":"docs/06-Tareas/TASK-004.md","x":1200,"y":120,"width":320,"height":100,"color":"4"},
+		{"id":"t5","type":"file","file":"docs/06-Tareas/TASK-005.md","x":1200,"y":480,"width":320,"height":100,"color":"4"},
+		{"id":"t6","type":"file","file":"docs/06-Tareas/TASK-006.md","x":1600,"y":0,"width":320,"height":100,"color":"4"},
+		{"id":"t7","type":"file","file":"docs/06-Tareas/TASK-007.md","x":1600,"y":360,"width":320,"height":100,"color":"4"},
+		{"id":"t12","type":"file","file":"docs/06-Tareas/TASK-012.md","x":1600,"y":660,"width":320,"height":100,"color":"4"},
+		{"id":"t8","type":"file","file":"docs/06-Tareas/TASK-008.md","x":2000,"y":360,"width":320,"height":100,"color":"4"},
+		{"id":"t9","type":"file","file":"docs/06-Tareas/TASK-009.md","x":2400,"y":180,"width":320,"height":100,"color":"4"},
+		{"id":"t10","type":"file","file":"docs/06-Tareas/TASK-010.md","x":2800,"y":60,"width":320,"height":100,"color":"6"},
+		{"id":"t11","type":"file","file":"docs/06-Tareas/TASK-011.md","x":2800,"y":320,"width":320,"height":100,"color":"6"}
+	],
+	"edges":[
+		{"id":"d1","fromNode":"t1","fromSide":"right","toNode":"t2","toSide":"left"},
+		{"id":"d2","fromNode":"t2","fromSide":"right","toNode":"t3","toSide":"left"},
+		{"id":"d3","fromNode":"t2","fromSide":"top","toNode":"t4","toSide":"left"},
+		{"id":"d4","fromNode":"t3","fromSide":"right","toNode":"t4","toSide":"left"},
+		{"id":"d5","fromNode":"t2","fromSide":"bottom","toNode":"t5","toSide":"left"},
+		{"id":"d6","fromNode":"t3","fromSide":"right","toNode":"t5","toSide":"left"},
+		{"id":"d7","fromNode":"t4","fromSide":"right","toNode":"t6","toSide":"left"},
+		{"id":"d8","fromNode":"t5","fromSide":"right","toNode":"t6","toSide":"left"},
+		{"id":"d9","fromNode":"t5","fromSide":"right","toNode":"t7","toSide":"left"},
+		{"id":"d10","fromNode":"t5","fromSide":"right","toNode":"t8","toSide":"left"},
+		{"id":"d11","fromNode":"t7","fromSide":"right","toNode":"t8","toSide":"left"},
+		{"id":"d12","fromNode":"t5","fromSide":"bottom","toNode":"t12","toSide":"left"},
+		{"id":"d13","fromNode":"t6","fromSide":"right","toNode":"t9","toSide":"left"},
+		{"id":"d14","fromNode":"t8","fromSide":"right","toNode":"t9","toSide":"left"},
+		{"id":"d15","fromNode":"t6","fromSide":"right","toNode":"t10","toSide":"left"},
+		{"id":"d16","fromNode":"t8","fromSide":"right","toNode":"t10","toSide":"left"},
+		{"id":"d17","fromNode":"t9","fromSide":"right","toNode":"t10","toSide":"left"},
+		{"id":"d18","fromNode":"t8","fromSide":"right","toNode":"t11","toSide":"left"},
+		{"id":"d19","fromNode":"t9","fromSide":"right","toNode":"t11","toSide":"left"},
+		{"id":"da","fromNode":"arch","fromSide":"bottom","toNode":"t2","toSide":"top","label":"estructura objetivo","color":"6"}
+	]
+}

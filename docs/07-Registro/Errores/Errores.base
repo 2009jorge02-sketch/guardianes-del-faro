@@ -1,0 +1,35 @@
+filters:
+  and:
+    - file.inFolder("docs/07-Registro/Errores")
+    - 'tipo == "error"'
+properties:
+  id:
+    displayName: Error
+  tarea:
+    displayName: Tarea
+views:
+  - type: table
+    name: Abiertos
+    filters:
+      and:
+        - 'estado != "resuelto"'
+    order:
+      - file.name
+      - gravedad
+      - estado
+      - tarea
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC
+  - type: table
+    name: Todos
+    order:
+      - file.name
+      - gravedad
+      - estado
+      - tarea
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC

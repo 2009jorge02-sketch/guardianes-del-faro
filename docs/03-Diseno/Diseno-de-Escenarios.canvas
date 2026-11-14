@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {"id": "mapas", "type": "file", "file": "docs/03-Diseno/Mapas.md", "x": 0, "y": 200, "width": 320, "height": 100, "color": "6"},
+    {"id": "g1", "type": "group", "x": 420, "y": 0, "width": 380, "height": 420, "label": "Geometría (MVP)", "color": "5"},
+    {"id": "t1", "type": "text", "text": "**Isla del Faro**\nCircular, radio ≈ 45 studs (diámetro 90). Único mapa del MVP.", "x": 440, "y": 60, "width": 340, "height": 90},
+    {"id": "t2", "type": "text", "text": "**Faro (centro)**\nBase radio 6, altura ≈ 40; galería ≈ 30 con puerta/escalera al Foco Mayor.", "x": 440, "y": 170, "width": 340, "height": 100},
+    {"id": "t3", "type": "text", "text": "**Anillo de aparición**\nRadio 60 en el mar, 10 puntos; Sombras recorren el tramo en ~7 s.", "x": 440, "y": 290, "width": 340, "height": 100},
+    {"id": "g2", "type": "group", "x": 880, "y": 0, "width": 380, "height": 420, "label": "Elementos y reglas", "color": "3"},
+    {"id": "t4", "type": "text", "text": "**Elementos**\nMuelle (decoración), 4 rocas bajas (sin colisión con enemigos), faroles apagados que activa la carta Reflector.", "x": 900, "y": 60, "width": 340, "height": 120},
+    {"id": "t5", "type": "text", "text": "**Sin obstáculos**\nLos enemigos van en línea recta al Faro: sin pathfinding.", "x": 900, "y": 200, "width": 340, "height": 90},
+    {"id": "t6", "type": "text", "text": "**Ambiente por noche**\nNoche 1 al atardecer → noche 5 en tormenta total (Lighting y Atmosphere).", "x": 900, "y": 310, "width": 340, "height": 90},
+    {"id": "g3", "type": "group", "x": 420, "y": 500, "width": 840, "height": 260, "label": "Recursos 3D asociados (solo fichas; no hay modelos)", "color": "2"},
+    {"id": "r1", "type": "file", "file": "docs/08-Recursos-3D/Escenarios/RES-003-Isla-del-Faro.md", "x": 440, "y": 560, "width": 260, "height": 80},
+    {"id": "r2", "type": "file", "file": "docs/08-Recursos-3D/Estructuras/RES-001-Faro-principal.md", "x": 720, "y": 560, "width": 260, "height": 80},
+    {"id": "r3", "type": "file", "file": "docs/08-Recursos-3D/Decoracion/RES-004-Muelle.md", "x": 1000, "y": 560, "width": 240, "height": 80},
+    {"id": "r4", "type": "file", "file": "docs/08-Recursos-3D/Decoracion/RES-005-Rocas-bajas.md", "x": 440, "y": 660, "width": 260, "height": 80},
+    {"id": "r5", "type": "file", "file": "docs/08-Recursos-3D/Objetos-Interactivos/RES-006-Faroles-Reflector.md", "x": 720, "y": 660, "width": 260, "height": 80},
+    {"id": "task", "type": "file", "file": "docs/06-Tareas/TASK-003.md", "x": 0, "y": 560, "width": 320, "height": 100, "color": "4"}
+  ],
+  "edges": [
+    {"id": "e1", "fromNode": "mapas", "fromSide": "right", "toNode": "g1", "toSide": "left", "label": "especifica"},
+    {"id": "e2", "fromNode": "g1", "fromSide": "right", "toNode": "g2", "toSide": "left"},
+    {"id": "e3", "fromNode": "g1", "fromSide": "bottom", "toNode": "g3", "toSide": "top", "label": "requiere"},
+    {"id": "e4", "fromNode": "mapas", "fromSide": "bottom", "toNode": "task", "toSide": "top", "label": "lo construye"},
+    {"id": "e5", "fromNode": "task", "fromSide": "right", "toNode": "g3", "toSide": "left", "label": "greybox por script"}
+  ]
+}

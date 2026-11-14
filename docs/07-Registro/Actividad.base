@@ -1,0 +1,55 @@
+filters:
+  and:
+    - file.inFolder("docs/07-Registro")
+    - or:
+        - tipo == "entrega-codex"
+        - tipo == "revision"
+properties:
+  file.name:
+    displayName: Registro
+  tarea:
+    displayName: Tarea
+  verificacion:
+    displayName: Verificación
+views:
+  - type: table
+    name: Entregas verificadas
+    filters:
+      and:
+        - tipo == "entrega-codex"
+        - verificacion == "verificada"
+    order:
+      - file.name
+      - tarea
+      - commit
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC
+  - type: table
+    name: Entregas pendientes de verificar
+    filters:
+      and:
+        - tipo == "entrega-codex"
+        - verificacion != "verificada"
+    order:
+      - file.name
+      - tarea
+      - verificacion
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC
+  - type: table
+    name: Revisiones
+    filters:
+      and:
+        - tipo == "revision"
+    order:
+      - file.name
+      - tarea
+      - resultado
+      - fecha
+    sort:
+      - property: fecha
+        direction: DESC

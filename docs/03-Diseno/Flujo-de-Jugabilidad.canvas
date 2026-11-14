@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {"id": "n1", "type": "text", "text": "**1. Jugar**\nEn < 20 s el jugador aparece en la isla al atardecer.", "x": 0, "y": 0, "width": 300, "height": 120},
+    {"id": "n2", "type": "text", "text": "**2. Primer prompt**\n«Mantén pulsado para encender la linterna». Aparecen 3 Sombras lentas.", "x": 380, "y": 0, "width": 300, "height": 120},
+    {"id": "n3", "type": "text", "text": "**3. Primera Sombra destruida**\nDestello, sonido y +1 contador. Segundo prompt: Foco Mayor (opcional).", "x": 760, "y": 0, "width": 300, "height": 120},
+    {"id": "n4", "type": "text", "text": "**4. Noche 1 (75 s)**\nSube en intensidad; el Faro recibe daño leve.", "x": 1140, "y": 0, "width": 300, "height": 120},
+    {"id": "n5", "type": "text", "text": "**5. Intermedio (30 s)**\n3 cartas, se elige 1.", "x": 1140, "y": 240, "width": 300, "height": 120},
+    {"id": "n6", "type": "text", "text": "**6. Noches 2–5**\nLa 5.ª termina con oleada final (Marea Negra en Alfa).", "x": 760, "y": 240, "width": 300, "height": 120},
+    {"id": "n7", "type": "text", "text": "**7. Fin**\nVictoria: Faro con Integridad > 0 tras la noche 5. Derrota: Integridad = 0 (los jugadores no mueren, se «apagan» 3 s).", "x": 380, "y": 240, "width": 300, "height": 140},
+    {"id": "n8", "type": "text", "text": "**8. Resultados**\nNoches superadas, Sombras destruidas, Cristales y Luz. Botón «Otra partida».", "x": 0, "y": 240, "width": 300, "height": 140},
+    {"id": "f1", "type": "file", "file": "docs/03-Diseno/GDD.md", "x": 0, "y": 480, "width": 300, "height": 100, "color": "6"},
+    {"id": "f2", "type": "file", "file": "docs/03-Diseno/Mecanicas.md", "x": 380, "y": 480, "width": 300, "height": 100},
+    {"id": "f3", "type": "file", "file": "docs/09-Interfaces/Pantallas/UI-003-Seleccion-de-carta.md", "x": 1140, "y": 480, "width": 300, "height": 100},
+    {"id": "f4", "type": "file", "file": "docs/09-Interfaces/Pantallas/UI-004-Resultados.md", "x": 760, "y": 640, "width": 300, "height": 100}
+  ],
+  "edges": [
+    {"id": "e1", "fromNode": "n1", "fromSide": "right", "toNode": "n2", "toSide": "left"},
+    {"id": "e2", "fromNode": "n2", "fromSide": "right", "toNode": "n3", "toSide": "left"},
+    {"id": "e3", "fromNode": "n3", "fromSide": "right", "toNode": "n4", "toSide": "left"},
+    {"id": "e4", "fromNode": "n4", "fromSide": "bottom", "toNode": "n5", "toSide": "top"},
+    {"id": "e5", "fromNode": "n5", "fromSide": "left", "toNode": "n6", "toSide": "right", "label": "siguiente noche"},
+    {"id": "e6", "fromNode": "n6", "fromSide": "left", "toNode": "n7", "toSide": "right"},
+    {"id": "e7", "fromNode": "n7", "fromSide": "left", "toNode": "n8", "toSide": "right"},
+    {"id": "e8", "fromNode": "n8", "fromSide": "top", "toNode": "n1", "toSide": "bottom", "label": "Otra partida", "color": "4"},
+    {"id": "e9", "fromNode": "n5", "fromSide": "bottom", "toNode": "f3", "toSide": "top", "label": "UI"},
+    {"id": "e10", "fromNode": "n8", "fromSide": "bottom", "toNode": "f1", "toSide": "top", "label": "bucle en"},
+    {"id": "e11", "fromNode": "n7", "fromSide": "bottom", "toNode": "f2", "toSide": "top", "label": "reglas"},
+    {"id": "e12", "fromNode": "n8", "fromSide": "right", "toNode": "f4", "toSide": "left", "label": "UI"}
+  ]
+}

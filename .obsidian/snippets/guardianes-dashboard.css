@@ -1,0 +1,93 @@
+/* =====================================================================
+   guardianes-dashboard.css  ·  Estilo del panel «Guardianes del Faro»
+   ---------------------------------------------------------------------
+   Reversible: desactiva el snippet en Ajustes > Apariencia > Fragmentos
+   CSS, o quita "guardianes-dashboard" de enabledCssSnippets en
+   .obsidian/appearance.json. Las notas no cambian: todo se aplica solo a
+   notas con `cssclasses: [dashboard]` (o `hub`) en su YAML.
+   No toca el tema; usa las variables de color del propio Obsidian, así
+   funciona en modo oscuro (recomendado) y claro.
+   Sin estilos las notas siguen siendo legibles (callouts normales).
+   ===================================================================== */
+
+.dashboard,
+.hub {
+  --gf-accent: #8b7bff;      /* morado */
+  --gf-accent-2: #38bdf8;    /* cian/azul */
+  --gf-card-bg: var(--background-secondary);
+  --gf-card-border: var(--background-modifier-border);
+  --gf-radius: 10px;
+  --gf-gap: 10px;
+}
+
+/* Jerarquía de títulos */
+.dashboard h1,
+.hub h1 {
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid var(--gf-accent);
+  padding-bottom: 0.3em;
+}
+.dashboard h2,
+.hub h2 {
+  margin-top: 1.6em;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gf-accent-2);
+  border-bottom: 1px solid var(--gf-card-border);
+  padding-bottom: 0.25em;
+}
+
+/* Rejilla de tarjetas: callout [!grid] que contiene callouts [!card] */
+.callout[data-callout="grid"] {
+  --callout-color: 139, 123, 255;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.callout[data-callout="grid"] > .callout-title { display: none; }
+.callout[data-callout="grid"] > .callout-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--gf-gap);
+  padding: 0;
+}
+.callout[data-callout="card"] {
+  --callout-color: 56, 189, 248;
+  background: var(--gf-card-bg);
+  border: 1px solid var(--gf-card-border);
+  border-left: 3px solid var(--gf-accent);
+  border-radius: var(--gf-radius);
+  margin: 0;
+  padding: 0.5em 0.8em 0.7em;
+}
+.callout[data-callout="card"]:hover { border-left-color: var(--gf-accent-2); }
+.callout[data-callout="card"] > .callout-title { padding: 0 0 0.2em; }
+.callout[data-callout="card"] > .callout-title .callout-icon { display: none; }
+.callout[data-callout="card"] > .callout-title-inner {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+.callout[data-callout="card"] > .callout-content { padding: 0; font-size: 0.88em; color: var(--text-muted); }
+.callout[data-callout="card"] p { margin: 0.15em 0; }
+
+/* Callout de estado (resumen del proyecto) */
+.callout[data-callout="estado"] {
+  --callout-color: 139, 123, 255;
+  --callout-icon: lucide-activity;
+  border-radius: var(--gf-radius);
+}
+
+/* Tablas e incrustaciones de Bases más compactas */
+.dashboard table,
+.hub table { font-size: 0.92em; }
+.dashboard .bases-view,
+.hub .bases-view { margin-bottom: 0.5em; }
+
+/* Móvil: una sola columna cómoda */
+@media (max-width: 600px) {
+  .callout[data-callout="grid"] > .callout-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .dashboard h2, .hub h2 { font-size: 1.05em; }
+}

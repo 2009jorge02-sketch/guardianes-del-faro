@@ -1,0 +1,70 @@
+filters:
+  and:
+    - file.inFolder("docs/06-Tareas")
+    - tipo == "tarea-codex"
+formulas:
+  esperando_a: list(depende_de).filter(link(value).asFile().properties.estado != "hecha").join(", ")
+  deps_pendientes: list(depende_de).filter(link(value).asFile().properties.estado != "hecha").length
+  ejecutable: estado == "lista" && list(depende_de).filter(link(value).asFile().properties.estado != "hecha").length == 0
+properties:
+  file.name:
+    displayName: Tarea
+  formula.esperando_a:
+    displayName: Espera a (no hechas)
+  formula.deps_pendientes:
+    displayName: Deps. pendientes
+views:
+  - type: table
+    name: Proxima ejecutable
+    limit: 1
+    filters:
+      and:
+        - formula.ejecutable
+    order:
+      - file.name
+      - titulo
+      - prioridad
+      - fase
+    sort:
+      - property: fase
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Ejecutables ahora
+    filters:
+      and:
+        - formula.ejecutable
+    order:
+      - file.name
+      - titulo
+      - prioridad
+      - fase
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Documentadas con dependencias pendientes
+    filters:
+      and:
+        - estado == "lista"
+        - formula.deps_pendientes > 0
+    order:
+      - file.name
+      - titulo
+      - formula.esperando_a
+      - formula.deps_pendientes
+      - prioridad
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Sin dependencias (respaldo)
+    filters:
+      and:
+        - estado == "lista"
+        - list(depende_de).length == 0
+    order:
+      - file.name
+      - titulo
+      - prioridad

@@ -1,0 +1,4 @@
+std = "roblox"
+
+[lints]
+# Mantener los lints por defecto; ajustar solo con un ADR si molestan en la práctica.

@@ -1,0 +1,111 @@
+filters:
+  and:
+    - file.inFolder("docs/08-Recursos-3D")
+    - 'tipo == "recurso-3d"'
+properties:
+  id:
+    displayName: ID
+  nombre:
+    displayName: Recurso
+  estado_produccion:
+    displayName: Producción
+  integracion_roblox:
+    displayName: Integración Roblox
+  tarea_codex:
+    displayName: Tarea Codex
+  asset_existe:
+    displayName: ¿Existe el asset?
+views:
+  - type: table
+    name: Todos los recursos
+    order:
+      - id
+      - nombre
+      - categoria
+      - prioridad
+      - estado_produccion
+      - integracion_roblox
+      - asset_existe
+      - herramienta
+      - tarea_codex
+    sort:
+      - property: id
+        direction: ASC
+  - type: table
+    name: Pendientes de crear
+    filters:
+      and:
+        - 'estado_produccion == "pendiente"'
+    order:
+      - id
+      - nombre
+      - categoria
+      - prioridad
+      - tarea_codex
+    sort:
+      - property: id
+        direction: ASC
+  - type: table
+    name: En produccion
+    filters:
+      and:
+        - 'estado_produccion == "en_produccion"'
+    order:
+      - id
+      - nombre
+      - herramienta
+      - archivo_fuente
+  - type: table
+    name: Pendientes de integracion
+    filters:
+      and:
+        - 'estado_produccion == "listo"'
+        - 'integracion_roblox != "integrado"'
+    order:
+      - id
+      - nombre
+      - archivo_exportado
+      - formato
+      - tarea_codex
+  - type: table
+    name: Integrados
+    filters:
+      and:
+        - 'integracion_roblox == "integrado"'
+    order:
+      - id
+      - nombre
+      - archivo_exportado
+      - tarea_codex
+  - type: table
+    name: Por categoría
+    groupBy:
+      property: categoria
+      direction: ASC
+    order:
+      - id
+      - nombre
+      - prioridad
+      - estado_produccion
+    sort:
+      - property: id
+        direction: ASC
+  - type: table
+    name: Por herramienta
+    groupBy:
+      property: herramienta
+      direction: ASC
+    order:
+      - id
+      - nombre
+      - estado_produccion
+  - type: cards
+    name: Galería de referencias
+    filters:
+      and:
+        - 'imagen_referencia != ""'
+    image: note.imagen_referencia
+    order:
+      - nombre
+      - categoria
+      - estado_produccion
