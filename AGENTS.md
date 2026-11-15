@@ -11,10 +11,11 @@ Eres el responsable de **programar, construir, probar y optimizar** el videojueg
 6. Si no hay instrucción distinta, toma la primera tarea ejecutable (`lista` con dependencias `hecha`).
 Si hay MCP de Obsidian, úsalo para buscar y leer fragmentos; si no, lee archivos con rango de líneas.
 
-## Entorno (verificado 2026-11-14; detalle en `docs/04-Arquitectura/Setup-Entorno.md`)
-- Git, Rokit 1.2.0, Rojo 7.7.1, StyLua 2.6.0, Selene 0.32.0 y el plugin de Rojo están instalados (versiones en `rokit.toml`). Ejecuta los comandos **dentro del repo**; si la terminal no ve `git` o `rokit`, refresca el PATH o abre una nueva.
+## Entorno (verificado 2026-11-15; detalle en `docs/04-Arquitectura/Setup-Entorno.md` y `Estado-de-Conexiones.md`)
+- Git, Rokit 1.2.0, Rojo 7.7.1, StyLua 2.6.0, Selene 0.32.0 y el plugin de Rojo están instalados y probados (versiones en `rokit.toml`). Ejecuta los comandos **dentro del repo**; si la terminal no ve `git` o `rokit`, refresca el PATH o abre una nueva.
 - Antes de cerrar cualquier tarea: `stylua --check src tests` y `selene src` sin avisos.
-- No hay Luau CLI ni luau-lsp: no los instales sin autorización; las pruebas se ejecutan desde Studio hasta nueva decisión.
+- **luau-lsp 1.70.1** está instalado fuera del repo (comprobación de tipos recomendada, no obligatoria): necesita las definiciones de Roblox y `rojo sourcemap` para no dar falsos errores; comandos en `Setup-Entorno.md`. No hay Luau CLI: las pruebas de ejecución se hacen en Studio hasta nueva decisión. No instales nada más sin autorización.
+- **MCP:** el de Roblox Studio requiere una instancia de Studio abierta; el de Obsidian, Obsidian abierto. REA es de investigación bajo demanda (no lo uses sobre material ajeno sin permiso expreso del usuario). Si un MCP no responde, sigue con lectura directa de archivos.
 - **El concepto es provisional** (ADR-004): solo la Fase 1 hasta ejecutar `VALIDACION-PROTOTIPO.md`. No empieces TASK-010 en adelante sin que su estado sea `lista`.
 - No hagas push ni crees remotos; commits solo si el usuario lo pide o en la rama de tarea (sección Git). Estado real de GitHub: `Estado-de-Conexiones.md`.
 
@@ -31,6 +32,7 @@ Claude planifica → Codex ejecuta → Codex documenta → Claude revisa → Cod
 Estados (`estado` del YAML): `borrador` → `lista` → `en_progreso` → `en_revision` → `hecha` (solo Claude, tras revisar) | `bloqueada`.
 - Al empezar: `en_progreso`. Al terminar: rellena «Informe final» de la tarea, `en_revision`, y añade una entrada breve en `PROGRESS.md`.
 - Cada cambio de estado actualiza también `fecha_actualizacion`. `depende_de` es el campo de dependencias.
+- Una tarea activa a la vez. Mientras trabajas, rellena en la tarea «Progreso por requisito», «Último punto de control», «Archivos modificados» y «Pruebas pendientes» (si la tarea los tiene); así se puede reanudar sin repetir trabajo (`docs/10-Coordinacion/Flujo-Claude-Codex.md`).
 - Crea `docs/07-Registro/Entregas/ENT-TASK-NNN.md` con la plantilla `entrega` (rama, commit, `verificacion: sin_verificar`). Claude la marca `verificada` o `rechazada`; solo lo verificado cuenta como avance.
 
 ## Git
@@ -44,3 +46,6 @@ Errores: `docs/07-Registro/Errores/ERR-NNN.md` (plantilla `error`); pruebas: `do
 
 ## Convenciones de código
 Luau con `--!strict` cuando sea posible; módulos de responsabilidad única; sin variables globales; nombres en inglés para código y comentarios breves; documentación del proyecto en español.
+
+## Skills del proyecto (`.agents/skills/`)
+`roblox-luau-engineer` (código Luau, Rojo, lint), `roblox-playtest-debugger` (pruebas, rendimiento, MCP de Studio), `roblox-asset-pipeline` (recursos 3D: Blender, Waspes, Studio) y `roblox-ui-implementation` (interfaces y Figma). Úsalas cuando la tarea encaje; amplían estas reglas, no las sustituyen. Studio MCP: `docs/04-Arquitectura/Roblox-Studio-MCP.md`.

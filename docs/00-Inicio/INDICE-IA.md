@@ -33,7 +33,7 @@ Punto de entrada de Claude y Codex. **No lo copies en tus respuestas**: úsalo p
 | Arte, UI, audio | [[Arte-UI-Audio]] |
 | Arquitectura, carpetas Luau, módulos | [[ARCHITECTURE]] · [[Cliente-Servidor]] |
 | Seguridad de remotos, rendimiento | [[Seguridad]] · [[Rendimiento]] |
-| Herramientas, comandos, Git/GitHub | [[Setup-Entorno]] · [[Estado-de-Conexiones]] |
+| Herramientas, comandos, Git/GitHub | [[Setup-Entorno]] · [[Estado-de-Conexiones]] · [[Roblox-Studio-MCP]] (MCP de Studio, distinto de Rojo) |
 | Por qué se decidió algo | ADR en [[Decisiones.base]] (leer solo el ADR citado) |
 | Riesgos, fases, puertas de calidad | [[Riesgos]] · [[ROADMAP]] · [[MVP]] · [[VALIDACION-PROTOTIPO]] |
 | Un recurso 3D | [[Catalogo-3D]] → ficha `RES-NNN` |
@@ -55,6 +55,7 @@ Punto de entrada de Claude y Codex. **No lo copies en tus respuestas**: úsalo p
 | `08-Recursos-3D` | 21 fichas `RES-NNN`, flujo, Blender, Waspes | [[Catalogo-3D]] |
 | `09-Interfaces` | 7 fichas `UI-NNN`, Figma, especificación para Codex | [[Interfaces]] |
 | `10-Coordinacion` | Centro de control y flujo Claude ↔ Codex | [[Centro-de-Control]] |
+| `.agents/skills` (raíz del repo) | 4 skills de Codex: `roblox-luau-engineer`, `roblox-playtest-debugger`, `roblox-asset-pipeline`, `roblox-ui-implementation` | — |
 | `_plantillas` | `tarea`, `decision`, `investigacion`, `revision`, `recurso-3d`, `interfaz`, `error`, `prueba`, `entrega` | — |
 
 ## Relaciones principales (para saltar sin cargar la red)

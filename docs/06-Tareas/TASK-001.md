@@ -8,7 +8,7 @@ depende_de: []
 responsable: Codex
 creado: 2026-11-14
 tipo: tarea-codex
-fecha_actualizacion: 2026-11-14
+fecha_actualizacion: 2026-11-15
 ---
 # TASK-001 · Andamiaje Rojo y herramientas
 
@@ -44,7 +44,9 @@ Crear: `default.project.json`, `src/**/Main.*.luau`, `tests/run.luau`. Ya existe
 Ejecutar los comandos anteriores y adjuntar la salida en el informe.
 
 ## Restricciones
-No instalar software sin autorización; no añadir dependencias externas (Wally, etc.) ni lógica de juego; no tocar `docs/` salvo el archivo indicado.
+No instalar software sin autorización; no añadir dependencias externas (Wally, etc.) ni lógica de juego; no tocar `docs/` salvo el archivo indicado y la excepción siguiente.
+
+**Excepción documental (solo durante la ejecución autorizada de esta tarea, y únicamente para registrarla según [[AGENTS]]):** Codex puede actualizar (1) el estado de esta tarea y su «Informe final», (2) `docs/04-Arquitectura/Setup-Entorno.md` (el archivo ya indicado), (3) `docs/07-Registro/PROGRESS.md`, (4) la nota de entrega `docs/07-Registro/Entregas/ENT-TASK-001.md` y (5) los registros de pruebas o errores estrictamente necesarios en `docs/07-Registro/Pruebas/` y `docs/07-Registro/Errores/`. Cualquier otra modificación de `docs/` sigue prohibida. Esta excepción no cambia el objetivo, los requisitos, las dependencias, los criterios de aceptación ni el alcance.
 
 ## Entregable
 Estructura de proyecto + configs + `Setup-Entorno.md` en una rama `codex/task-001-scaffold`.

@@ -1,7 +1,7 @@
 ---
 id: ADR-002
 titulo: Herramientas de desarrollo (Rojo, StyLua, Selene, luau-lsp)
-estado: aceptada e instalada (Rojo 7.7.1, StyLua 2.6.0, Selene 0.32.0 vía Rokit 1.2.0); luau-lsp y Luau CLI pendientes
+estado: aceptada e instalada (Rojo 7.7.1, StyLua 2.6.0, Selene 0.32.0 vía Rokit 1.2.0; luau-lsp 1.70.1 instalado fuera del repo); Luau CLI pendiente
 fecha: 2026-11-14
 decide: "Claude (instalación: usuario)"
 ---
@@ -25,6 +25,11 @@ Rojo + StyLua + Selene (+ luau-lsp opcional) con `rokit.toml`. **No se instala n
 
 ## Actualización 2026-11-14
 Con autorización expresa del usuario se instalaron Rojo, StyLua y Selene con Rokit y el plugin de Rojo; resultados en [[Setup-Entorno]]. Sigue **pendiente** un ejecutor de pruebas Luau fuera de Studio (Luau CLI): no instalado; Codex puede proponerlo en [[TASK-001]] y se necesita autorización. luau-lsp: opcional.
+
+## Actualización 2026-11-15
+- **luau-lsp 1.70.1** instalado con autorización del usuario en `C:\Users\tatia\tools\luau-lsp\` (fuera del repo; release oficial con hash verificado). Probado con `analyze` junto a StyLua, Selene y Rojo sin conflictos; necesita las definiciones de Roblox y el sourcemap de Rojo para evitar falsos errores ([[Setup-Entorno]]). Su integración en el repo (`rokit.toml`, criterio de cierre de tareas) sigue **pendiente de decisión**.
+- El MCP de Roblox Studio, que la tabla anterior dejaba para evaluar en Alfa, ya está operativo en Codex (requiere Studio abierto): ver [[Roblox-Studio-MCP]] y [[Estado-de-Conexiones]]. La tabla de Opciones se conserva como historial.
+- Luau CLI: sigue sin instalar.
 
 ## Consecuencias
 Entorno listo; la conexión Studio↔Rojo debe confirmarla el usuario la primera vez ([[Setup-Entorno]]).

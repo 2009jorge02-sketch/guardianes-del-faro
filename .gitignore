@@ -31,3 +31,6 @@ build/
 # Archivo comprimido de copia del vault (no versionar)
 .obsidian.zip
 *.zip
+
+# Logs de diagnostico del plugin MCP Connector de Obsidian (cambian en cada uso; no versionar)
+.obsidian/plugins/mcp-tools-istefox/diagnostic.log

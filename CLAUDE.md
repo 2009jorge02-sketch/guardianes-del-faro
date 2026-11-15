@@ -28,7 +28,8 @@ Videojuego de Roblox «Guardianes del Faro» (provisional). Este repositorio es 
 
 ## Estado vigente
 - Concepto **provisional** (ADR-001 + ADR-004): validar con prototipo (`VALIDACION-PROTOTIPO.md`) antes de ampliar alcance.
-- Entorno: `Setup-Entorno.md` (Rojo, StyLua, Selene vía Rokit; refrescar PATH en PowerShell si hace falta).
+- Entorno: `Setup-Entorno.md` (Rojo, StyLua, Selene vía Rokit; luau-lsp 1.70.1 fuera del repo; refrescar PATH en PowerShell si hace falta). Conexiones y MCP (REA en hot-cold + compact, Obsidian MCP que exige Obsidian abierto, Studio MCP que exige Studio abierto): solo en `Estado-de-Conexiones.md`.
+- REA: cargar herramientas bajo demanda con `discover_tools` y salidas resumidas; solo sobre material propio, abierto o con permiso expreso.
 - Recursos 3D (`08-Recursos-3D`, fichas `RES-NNN`) e interfaces (`09-Interfaces`, `UI-NNN`) son **especificaciones**: `asset_existe: true` solo con archivo real. No dar por conectada una herramienta solo por estar instalada (`Estado-de-Conexiones.md`).
 - Estilo del vault: snippet `.obsidian/snippets/guardianes-dashboard.css` (reversible; respaldos `.obsidian-backup-*`).
 

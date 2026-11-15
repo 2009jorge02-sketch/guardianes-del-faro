@@ -1,6 +1,6 @@
 ---
 tipo: entrega
-actualizado: "2026-11-14 (v2: herramientas instaladas, concepto provisional, validación)"
+actualizado: "2026-11-15 (v3: lectura progresiva, herramientas y conexiones actualizadas)"
 ---
 # Entrega para Codex
 
@@ -10,11 +10,11 @@ actualizado: "2026-11-14 (v2: herramientas instaladas, concepto provisional, val
 ## Prototipo (Fase 1) y para qué sirve
 Una isla greybox generada por código, linterna con Carga, Sombras sin `Humanoid` (tope 60), Integridad, 5 noches por `Config`, HUD y resultados mínimos, herramienta de rendimiento. **Su único propósito es validar el concepto** ([[VALIDACION-PROTOTIPO]]): ¿es divertido el haz?, ¿rinde ≥30 FPS en móvil con 60 enemigos?, ¿funciona el control táctil? Hasta que se registre esa decisión **no se empieza TASK-010 ni posteriores**.
 
-## Documentos fundamentales
-[[GDD]] · [[Mecanicas]] (cifras) · [[Revision-Concepto]] · [[VALIDACION-PROTOTIPO]] · [[ARCHITECTURE]] · [[Cliente-Servidor]] · [[Seguridad]] · [[Rendimiento]] · [[Setup-Entorno]] · [[ADR-002-herramientas]] · [[ADR-003-enemigos]] · [[MVP]] · [[ROADMAP]] · [[TASKS]] · [[AGENTS]]
+## Documentos de referencia (consultar solo la sección que cite la tarea; no leerlos todos)
+[[GDD]] · [[Mecanicas]] (cifras) · [[Revision-Concepto]] · [[VALIDACION-PROTOTIPO]] · [[ARCHITECTURE]] · [[Cliente-Servidor]] · [[Seguridad]] · [[Rendimiento]] · [[Setup-Entorno]] · [[ADR-002-herramientas]] · [[ADR-003-enemigos]] · [[MVP]] · [[ROADMAP]] · [[TASKS]] · [[AGENTS]]. Índice de qué leer para cada necesidad: [[INDICE-IA]].
 
-## Herramientas (ya instaladas y verificadas el 2026-11-14)
-Git 2.56.1 · Rokit 1.2.0 · Rojo 7.7.1 · StyLua 2.6.0 · Selene 0.32.0 · plugin de Rojo copiado a Studio. Configs ya presentes: `rokit.toml`, `stylua.toml`, `selene.toml`, `.luaurc`, `.gitattributes`. **No instalados:** Luau CLI y luau-lsp (no los instales sin autorización). Roblox Studio está instalado; la conexión Rojo↔Studio la confirma el usuario manualmente la primera vez ([[Setup-Entorno]]). Ejecuta los comandos **dentro del repo**.
+## Herramientas y conexiones (detalle y fuente única: [[Setup-Entorno]] y [[Estado-de-Conexiones]])
+Git · Rokit 1.2.0 · Rojo 7.7.1 · StyLua 2.6.0 · Selene 0.32.0 · plugin de Rojo en Studio · **luau-lsp 1.70.1** (instalado fuera del repo; necesita definiciones de Roblox y el sourcemap de Rojo). Configs presentes: `rokit.toml`, `stylua.toml`, `selene.toml`, `.luaurc`, `.gitattributes`. **No instalado:** Luau CLI. MCP de Roblox Studio disponible (requiere Studio abierto). Ejecuta los comandos **dentro del repo**.
 
 ## Arquitectura propuesta (resumen)
 `src/shared` (Config, Types, Remotes, Util) · `src/server/Services` (Match, Lighthouse, Enemy, Beam, Spotlight, Card, PlayerState, MapBuilder) · `src/client/Controllers`. Servidor autoritativo; remotes validados con rate-limit; enemigos como datos + Parts pooleadas movidas con `BulkMoveTo`.
@@ -39,29 +39,25 @@ Git 2.56.1 · Rokit 1.2.0 · Rojo 7.7.1 · StyLua 2.6.0 · Selene 0.32.0 · plug
 - Cada tarea: criterios de aceptación ✔/✘ con evidencias; sin funcionalidades fuera de alcance.
 
 ## Cómo registrar resultados
-1. En la tarea: «Informe final» ([[AGENTS]]) y estado `en_revision`.
-2. Entrada fechada en [[PROGRESS]].
-3. Mediciones y playtests en `docs/07-Registro/Revisiones/`.
-4. Dudas de diseño: «Bloqueos / preguntas» de la tarea; no inventar reglas.
+Informe final en la tarea, estado `en_revision`, nota de entrega y entrada fechada en [[PROGRESS]]; mediciones y playtests en `docs/07-Registro/Pruebas/`. Detalle y puntos de control para reanudar: [[AGENTS]] y [[Flujo-Claude-Codex]]. Dudas de diseño: «Bloqueos / preguntas» de la tarea; no inventar reglas.
 
 ## Pendientes humanos
-Remoto de GitHub y primer commit · probar Rojo↔Studio · móvil real para validar · aprobación final del concepto tras el playtest ([[Riesgos]]).
+Decidir el commit del trabajo de preparación · probar Rojo↔Studio la primera vez · móvil real para validar · aprobación final del concepto tras el playtest ([[Riesgos]]).
 
 ---
 ## PROMPT DE INICIO PARA CODEX (copiar y pegar)
 
 ```
-Eres Codex, el responsable de programar el prototipo del videojuego de Roblox «Guardianes del Faro» (concepto PROVISIONAL, pendiente de validar). El diseño, la arquitectura y las tareas ya están decididos por Claude: NO rediseñes el proyecto.
+Eres Codex, responsable de programar el prototipo del videojuego de Roblox «Guardianes del Faro» (concepto PROVISIONAL). El diseño, la arquitectura y las tareas ya están decididos por Claude: NO rediseñes el proyecto.
 
-Antes de escribir código, en este repositorio:
-1. Lee completo AGENTS.md (reglas, entorno verificado, ciclo de estados, informe final).
-2. Lee docs/00-Inicio/ENTREGA-PARA-CODEX.md y docs/07-Registro/PROGRESS.md.
-3. Lee docs/03-Diseno/GDD.md, docs/03-Diseno/Mecanicas.md (única fuente de cifras), docs/03-Diseno/Revision-Concepto.md, docs/05-Planificacion/VALIDACION-PROTOTIPO.md, docs/04-Arquitectura/ARCHITECTURE.md, Cliente-Servidor.md, Seguridad.md, Rendimiento.md y Setup-Entorno.md, y los ADR de docs/07-Registro/Decisiones/.
-4. Lee docs/05-Planificacion/TASKS.md y las tareas docs/06-Tareas/TASK-001.md a TASK-012.md.
+Lectura inicial, progresiva (no leas nada más hasta necesitarlo):
+1. AGENTS.md (reglas, entorno, estados, informe final).
+2. docs/00-Inicio/INDICE-IA.md (qué documento responde a cada necesidad).
+3. La tarea asignada, docs/06-Tareas/TASK-NNN.md, COMPLETA: requisitos, dependencias, criterios de aceptación, pruebas y restricciones.
+4. Solo las secciones que esa tarea cita de otros documentos.
+5. Las últimas líneas de docs/07-Registro/PROGRESS.md (último punto de control).
 
-Entorno (ya instalado; ejecuta los comandos dentro del repo): Git, Rokit, Rojo 7.7.1, StyLua 2.6.0, Selene 0.32.0 y el plugin de Rojo. Si una terminal no ve git/rokit, refresca el PATH (ver Setup-Entorno.md). No instales Luau CLI, luau-lsp ni nada más sin avisar al usuario. No hagas push ni crees remotos.
+Antes de empezar comprueba que la tarea es ejecutable: estado lista y todas sus dependencias en hecha. Hoy es TASK-001: trabaja en la rama codex/task-001-scaffold, pon el estado en en_progreso, implementa solo lo que pide, ejecuta las comprobaciones indicadas y, al terminar, sigue el cierre de AGENTS.md (informe final, en_revision, entrega, PROGRESS). Después, por este orden: 002, 003, 004, 005, 012, 006, 007, 008, 009, siempre que cada una sea ejecutable. Detente tras la 009: TASK-010 y posteriores están congeladas hasta validar el prototipo.
 
-Comienza con TASK-001 en la rama codex/task-001-scaffold: cambia su estado a en_progreso, implementa solo lo que pide, ejecuta las comprobaciones indicadas, y al terminar rellena su «Informe final», pon el estado en en_revision y añade una entrada en PROGRESS.md. Después sigue este orden: 002, 003, 004, 005, 012, 006, 007, 008, 009. Detente tras la 009: no empieces TASK-010 ni posteriores (están congeladas hasta validar el prototipo).
-
-Reglas clave: servidor autoritativo y todo remote validado; valores de balance solo en Config y coincidentes con Mecanicas.md; stylua --check src tests y selene src limpios; si falta una decisión de diseño, anótala en «Bloqueos / preguntas» y no inventes reglas; no añadas funcionalidades fuera de alcance; no marques ninguna tarea como hecha (lo hace Claude tras revisar evidencias).
+Aplican todas las reglas de AGENTS.md (servidor autoritativo, balance solo en Config, sin instalar herramientas ni hacer push, bloqueos en la tarea, nada se marca hecha salvo por Claude). Si dejas una tarea a medias, anota el punto de control en ella.
 ```
