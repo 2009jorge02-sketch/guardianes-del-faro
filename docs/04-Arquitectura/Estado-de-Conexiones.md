@@ -8,9 +8,9 @@ verificado: 2026-11-15
 «Instalado en Windows» no significa «accesible para Claude». Esta es la **fuente única** de este estado; otros documentos enlazan aquí en lugar de repetirlo. Niveles: **instalado → registrado → conectado → probado**.
 
 ## GitHub (comprobado con Git)
-- Remoto `origin` (fetch y push): `https://github.com/2009jorge02-sketch/guardianes-del-faro.git`. Repositorio **privado**: la API sin autenticar responde 404 y `git ls-remote` con las credenciales del usuario funciona.
-- `main` local = `origin/main` en `fdd006d` («Configuración inicial de Guardianes del Faro», 2026-11-15, hecho por el usuario), sobre el inicial `d1c733c`. Comprobado el 2026-11-15 con `git fetch`, `git rev-parse` y `git ls-remote --heads origin` (solo lectura).
-- El trabajo posterior a `fdd006d` (skills de `.agents/skills/`, `Roblox-Studio-MCP.md`, `INDICE-IA`, cambios de configuración y documentos) queda **sin commit** hasta que el usuario lo decida; **no está en GitHub**. Consultar `git status` para el estado exacto.
+- Remoto `origin` (fetch y push): `https://github.com/2009jorge02-sketch/guardianes-del-faro.git`. Repositorio **privado** y correctamente conectado (última comprobación: 2026-11-15): la API sin autenticar responde 404, y `git ls-remote`, `git fetch` y el push a `origin/main` con las credenciales del usuario funcionan.
+- **Sincronización:** en la última comprobación (2026-11-15), `main` local y `origin/main` coincidían y el árbol de trabajo estaba limpio. **No se fija aquí ningún hash** (cambia con cada commit): el estado actual se consulta con `git status -sb`, `git rev-parse HEAD` y `git rev-parse origin/main`.
+- Los cambios pendientes de commit o de push, si los hay, los muestra siempre `git status`; este documento no los lista.
 - Nadie hace commits ni push automáticos: Obsidian Git con intervalos a 0 y push desactivado; Claude no los hace sin petición expresa.
 - Seguridad: sin credenciales en archivos versionados ni en el historial (comprobado por patrones, sin mostrar valores). Los tokens del plugin MCP Connector viven en `.obsidian/plugins/mcp-tools-istefox/data.json`, **ignorado por Git**: no incluirlo en copias ni ZIP que se compartan. El log `diagnostic.log` del mismo plugin ya no se versiona.
 - No verificado: permisos del repositorio de GitHub más allá de la visibilidad.
