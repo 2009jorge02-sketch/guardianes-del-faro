@@ -6,6 +6,8 @@ prioridad: media
 fase: 1
 depende_de: [TASK-006, TASK-008]
 responsable: Codex
+txx: T05
+txx_autorizada: false
 creado: 2026-11-14
 tipo: tarea-codex
 fecha_actualizacion: 2026-11-14
@@ -21,7 +23,7 @@ Diseño de interfaz: [[Arte-UI-Audio]] §Interfaz. Estados: [[TASK-008]]. Accesi
 ## Requisitos
 1. `HudController`: barra de Integridad del Faro, «Noche N/5» y cuenta atrás, barra de Carga junto al botón de linterna, contador de Sombras destruidas; todo desde `MatchState` y atributos.
 2. Feedback de daño al faro: sacudida de cámara leve y viñeta roja breve al cambiar `LastHit` (con opción de reducir efectos desactivada por ahora, pero preparada por `Settings.reduceEffects`).
-3. Pantalla de resultados (`ResultsScreen`): victoria/derrota, noches superadas, Sombras destruidas, tiempo; botón «Otra partida» (`PlayAgain`). Sin recompensas aún (marcador de posición «Luz y Cristales: próximamente»).
+3. Pantalla de resultados (`ResultsScreen`): victoria/derrota, noches superadas, Sombras destruidas, tiempo; botón «Otra partida» (`PlayAgain`). Sin recompensas aún (marcador de posición «Experiencia de Guardián y Monedas del Faro: próximamente»).
 4. Mensajes de tutorial contextual (máx. 3) durante la noche 1: «Mantén pulsado para encender la linterna», «Apunta hacia las Sombras», «Protege el faro».
 5. UI escalable (`UIScale`/anclajes) legible en móvil: botones ≥48 px, texto ≥16 px equivalente; sin parpadeos >3 Hz.
 6. Estilo provisional coherente con la paleta de [[Arte-UI-Audio]].

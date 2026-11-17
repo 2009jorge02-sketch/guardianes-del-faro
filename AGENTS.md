@@ -1,5 +1,7 @@
 # AGENTS.md — Instrucciones para Codex
 
+> **Política vigente V4.2:** [[ADR-007-revision-por-hitos]] sustituye las revisiones cruzadas por tarea y la matriz rígida de modelos: autorrevisión del ejecutor y cuatro auditorías por hitos. Prevalece sobre las reglas incompatibles de cierre y selección de modelo de este archivo. T01 puede completarse por Claude con autorrevisión; Q1–Q4 siguen pendientes de evidencia.
+
 Eres el responsable de **programar, construir, probar y optimizar** el videojuego de Roblox. Claude diseña y planifica; tú ejecutas. No hay conexión automática entre ambos: la coordinación es por archivos de este repositorio (vault de Obsidian) y Git/GitHub.
 
 ## Antes de empezar (lectura progresiva, sin cargar todo)
@@ -8,7 +10,7 @@ Eres el responsable de **programar, construir, probar y optimizar** el videojueg
 3. Dependencias: comprueba solo el `estado` (YAML) de cada tarea de `depende_de`; todas deben estar `hecha`. Una tarea «lista» con dependencias sin hacer es solo documentación, no ejecutable (vista `docs/05-Planificacion/Tareas-Ejecutables.base`).
 4. Documentos enlazados por la tarea (`Contexto`, `Requisitos`, `Restricciones`): lee **solo la sección citada** y no repitas lecturas ya hechas.
 5. `docs/00-Inicio/ENTREGA-PARA-CODEX.md` solo en tu primera sesión; `docs/07-Registro/PROGRESS.md` solo las últimas líneas.
-6. Si no hay instrucción distinta, toma la primera tarea ejecutable (`lista` con dependencias `hecha`).
+6. Si no hay instrucción distinta, trabaja solo en la Txx que el propietario haya autorizado y, dentro de ella, en la primera TASK ejecutable (`lista`, dependencias `hecha` y `txx_autorizada: true`; [[ADR-007-revision-por-hitos]] §Estados).
 Si hay MCP de Obsidian, úsalo para buscar y leer fragmentos; si no, lee archivos con rango de líneas.
 
 ## Entorno (verificado 2026-11-15; detalle en `docs/04-Arquitectura/Setup-Entorno.md` y `Estado-de-Conexiones.md`)
@@ -16,6 +18,7 @@ Si hay MCP de Obsidian, úsalo para buscar y leer fragmentos; si no, lee archivo
 - Antes de cerrar cualquier tarea: `stylua --check src tests` y `selene src` sin avisos.
 - **luau-lsp 1.70.1** está instalado fuera del repo (comprobación de tipos recomendada, no obligatoria): necesita las definiciones de Roblox y `rojo sourcemap` para no dar falsos errores; comandos en `Setup-Entorno.md`. No hay Luau CLI: las pruebas de ejecución se hacen en Studio hasta nueva decisión. No instales nada más sin autorización.
 - **MCP:** el de Roblox Studio requiere una instancia de Studio abierta; el de Obsidian, Obsidian abierto. REA es de investigación bajo demanda (no lo uses sobre material ajeno sin permiso expreso del usuario). Si un MCP no responde, sigue con lectura directa de archivos.
+- **Monetización (ADR-005 + ADR-006):** cartas permanentes por Monedas del Faro o Robux con función idéntica; cosméticos solo Robux; nunca reanimaciones ni recursos de partida por Robux; el prototipo va sin tienda ni pagos (ADR-004). **No implementes** venta de monedas, aceleradores ni suscripciones sin decisión aprobada (`docs/03-Diseno/Decisiones-Monetizacion-Pendientes.md`). Trabajas en un worktree fuera del vault; sin push ni merge sin aprobación.
 - **El concepto es provisional** (ADR-004): solo la Fase 1 hasta ejecutar `VALIDACION-PROTOTIPO.md`. No empieces TASK-010 en adelante sin que su estado sea `lista`.
 - No hagas push ni crees remotos; commits solo si el usuario lo pide o en la rama de tarea (sección Git). Estado real de GitHub: `Estado-de-Conexiones.md`.
 

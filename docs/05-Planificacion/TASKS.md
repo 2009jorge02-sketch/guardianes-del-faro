@@ -6,7 +6,7 @@ actualizado: 2026-11-14
 
 Vista dinámica: abrir [[Tareas.base]] (Bases de Obsidian, filtra `docs/06-Tareas`). Ciclo y estados: [[AGENTS]]. Fases: [[ROADMAP]].
 
-## Orden de ejecución recomendado (Fase 1)
+## Orden de ejecución histórico (sustituido por T00–T21: [[ADR-006-contrato-producto-v4]] §Relación)
 `001 → 002 → 003 → 004 → 005 → 012 (medir rendimiento pronto) → 006 → 007 → 008 → 009`
 Puerta 1 de [[MVP]]. Luego Fase 2: 010, 011 y las siguientes.
 
@@ -25,7 +25,7 @@ Puerta 1 de [[MVP]]. Luego Fase 2: 010, 011 y las siguientes.
 | [[TASK-010]] | Foco Mayor | 2 | 006, 008, 009 | borrador |
 | [[TASK-011]] | Cartas de mejora | 2 | 008, 009 | borrador |
 
-## Tareas futuras (esquema; se detallarán al cerrar la fase anterior)
+## Tareas futuras (desglose histórico absorbido por las Txx; no es una secuencia de autorización)
 **Fase 2 · MVP:** 013 Reptante y Bruto · 014 DataService (persistencia) · 015 RewardService (Luz y Cristales) · 016 Menú principal y personalización · 017 Tutorial en acción y ajustes (accesibilidad) · 018 Pruebas de 20 partidas seguidas.
 **Fase 3 · Alfa:** 019 Gaviotas y jefe Marea Negra · 020 Dificultades Tormenta · 021 Tienda cosmética y compras (ProcessReceipt) · 022 Variantes de linterna · 023 Integración de arte final · 024 Audio · 025 Revisión de seguridad de remotes.
 **Fase 4 · Beta:** 026 Analítica propia (abandono 1.ª partida, D1/D7) · 027 Optimización móvil · 028 Correcciones de playtest · 029 Revisión de políticas Roblox.
@@ -33,7 +33,7 @@ Puerta 1 de [[MVP]]. Luego Fase 2: 010, 011 y las siguientes.
 
 **Congelado:** desde TASK-010 en adelante nada empieza hasta ejecutar [[VALIDACION-PROTOTIPO]] y registrar la decisión ([[ADR-004-validacion-concepto]]). Cambios añadidos tras [[Revision-Concepto]]: esquemas táctiles A/B (TASK-004), `overlapBonus` (TASK-006), pulsos de oleada (TASK-008), plantilla de playtest (TASK-012), y TASK-001 reducida porque las herramientas y configs ya están instaladas ([[Setup-Entorno]]).
 
-Regla: una tarea pasa a `hecha` solo tras revisión de Claude con evidencias ([[CLAUDE]]).
+Regla: los estados se traducen según [[ADR-007-revision-por-hitos]] §Estados; `hecha` exige autorrevisión con evidencias, y el hito se cierra con su auditoría cruzada. *Antes: «solo tras revisión de Claude con evidencias».*
 
 ## Relacionado (añadido en la mejora del vault)
 - Panel de supervisión: [[Centro-de-Control]] · Resumen vivo del estado: la verdad está en el YAML de cada tarea ([[Tareas.base]]); esta tabla es solo un resumen histórico.

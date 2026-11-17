@@ -1,6 +1,6 @@
 ---
 tipo: indice-ia
-actualizado: 2026-11-14
+actualizado: 2026-11-17
 ---
 # Índice para IA (ligero)
 
@@ -29,6 +29,11 @@ Punto de entrada de Claude y Codex. **No lo copies en tus respuestas**: úsalo p
 | Visión general del juego | [[GDD]] (3 KB; remite al resto) |
 | Cifras de enemigos, linterna, noches, cartas | [[Mecanicas]] por sección |
 | Progresión, economía, monetización | [[Progresion-Economia]] · [[Monetizacion]] |
+| Objetivo económico, previsión, adquisición, decisiones comerciales abiertas | [[Modelo-Economico]] · [[Adquisicion-Organica]] · [[Decisiones-Monetizacion-Pendientes]] · [[ADR-005-estrategia-comercial]] |
+| Contrato de producto V4.1: cartas por monedas o Robux, recursos, derribo, votación de cartas, gates Q1–Q4, T00–T21 ↔ TASK | [[ADR-006-contrato-producto-v4]] |
+| Política de revisión V4.2: autorrevisión por tarea, 4 auditorías por hito, modelos de menor coste | [[ADR-007-revision-por-hitos]] |
+| Gates Q1–Q4: plan de playtest, consentimiento y fichas de evidencia | [[PLAYTEST_PLAN]] · [[Protocolo-Gates-Q]] |
+| Guía estética: 12 referencias visuales (4 maestras + 8 de producción) | [[Indice-Referencias-Visuales]] |
 | Mapa e isla | [[Mapas]] |
 | Arte, UI, audio | [[Arte-UI-Audio]] |
 | Arquitectura, carpetas Luau, módulos | [[ARCHITECTURE]] · [[Cliente-Servidor]] |

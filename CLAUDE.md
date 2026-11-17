@@ -1,5 +1,7 @@
 # CLAUDE.md — Director del proyecto
 
+> **Política vigente V4.2:** [[ADR-007-revision-por-hitos]] sustituye las revisiones cruzadas por tarea y la matriz rígida de modelos: autorrevisión del ejecutor y cuatro auditorías por hitos. Prevalece sobre las reglas incompatibles de cierre y modelos de este archivo. T01 puede completarse con autorrevisión; se mantiene el control especial de cuota hasta confirmación del Free Reset y Q1–Q4 requieren evidencia real.
+
 Videojuego de Roblox «Guardianes del Faro» (provisional). Este repositorio es también el vault de Obsidian (raíz = `Juego roblox 1/`).
 
 ## Roles
@@ -28,6 +30,7 @@ Videojuego de Roblox «Guardianes del Faro» (provisional). Este repositorio es 
 
 ## Estado vigente
 - Concepto **provisional** (ADR-001 + ADR-004): validar con prototipo (`VALIDACION-PROTOTIPO.md`) antes de ampliar alcance.
+- **Objetivo comercial (ADR-005):** 100–300 €/mes canjeables antes de impuestos (meta, no previsión); cifras solo en `Modelo-Economico.md`. Contrato de producto V4.1 en `ADR-006` (cartas por monedas o Robux, cosméticos solo Robux, derribo y reanimación, gates Q1–Q4). Aceleradores y suscripción **no aprobados** (`Decisiones-Monetizacion-Pendientes.md`). Codex en worktree fuera del vault; sin push ni merge sin aprobación.
 - Entorno: `Setup-Entorno.md` (Rojo, StyLua, Selene vía Rokit; luau-lsp 1.70.1 fuera del repo; refrescar PATH en PowerShell si hace falta). Conexiones y MCP (REA en hot-cold + compact, Obsidian MCP que exige Obsidian abierto, Studio MCP que exige Studio abierto): solo en `Estado-de-Conexiones.md`.
 - REA: cargar herramientas bajo demanda con `discover_tools` y salidas resumidas; solo sobre material propio, abierto o con permiso expreso.
 - Recursos 3D (`08-Recursos-3D`, fichas `RES-NNN`) e interfaces (`09-Interfaces`, `UI-NNN`) son **especificaciones**: `asset_existe: true` solo con archivo real. No dar por conectada una herramienta solo por estar instalada (`Estado-de-Conexiones.md`).

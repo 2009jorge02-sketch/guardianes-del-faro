@@ -6,6 +6,8 @@ prioridad: alta
 fase: 1
 depende_de: [TASK-002]
 responsable: Codex
+txx: T05
+txx_autorizada: false
 creado: 2026-11-14
 tipo: tarea-codex
 fecha_actualizacion: 2026-11-14

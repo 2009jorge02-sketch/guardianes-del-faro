@@ -21,7 +21,7 @@ fecha_actualizacion: 2026-11-14
 Descrita en [[Arte-UI-Audio]] §Interfaz y enlazada con el [[GDD]].
 
 ## Elementos y comportamiento
-Noches superadas, estadísticas (Sombras destruidas), Cristales y Luz ganados con barra de nivel, botón «Otra partida».
+Noches superadas, estadísticas (Sombras destruidas), Monedas del Faro y Experiencia de Guardián ganadas con barra de nivel, botón «Otra partida».
 
 ## Tarea técnica y estado
 En Fase 1 la versión es mínima; las recompensas llegan en Fase 2 (015 prevista en [[TASKS]]).

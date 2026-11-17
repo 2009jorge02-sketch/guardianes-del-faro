@@ -8,15 +8,15 @@ tipo: glosario
 | **Faro** | Objetivo a defender; tiene Integridad |
 | **Integridad** | Vida del faro (100 base) |
 | **Sombra** | Enemigo básico de cristal oscuro |
-| **Reptante / Bruto / Gaviota / Marea Negra** | Otros enemigos ([[Mecanicas]]) |
+| **Rastreadora / Acechadora / Bruta** | Arquetipos de la Sombra del prototipo (antes Sombra / Reptante / Bruto; D18). Gaviota y Marea Negra: futuras ([[Mecanicas]]) |
 | **Linterna** | Haz individual de cada jugador (cono) |
 | **Foco Mayor** | Haz grande compartido en la galería del faro |
 | **Carga** | Energía de la linterna |
-| **Apagado** | Estado de 3 s tras un golpe; nadie muere |
+| **Derribado / Eliminado** | Salud 0 → derribado (rescate gratis por un compañero); sin rescate → eliminado (reanimación con Cristales de Luz). *Antes: «Apagado» de 3 s* (D5/D15) |
 | **Noche** | Oleada de 75–120 s; una partida = 5 |
-| **Carta** | Mejora elegida en el intermedio |
-| **Luz** | XP de cuenta |
-| **Cristales** | Moneda blanda para cosméticos |
+| **Carta temporal / permanente** | Temporal: mejora de equipo votada en el descanso, solo esa partida. Permanente: capacidad equipada antes de jugar (Monedas del Faro o Robux) |
+| **Experiencia de Guardián (XP)** | XP de cuenta (antes «Luz», D17) |
+| **Cristales de Luz** | Recurso compartido solo de la partida (reanimación, defensa); no persiste. **Monedas del Faro:** moneda permanente para cartas (D2) |
 | **Tormenta** | Dificultad opcional |
 | **CCU / DAU / MUP / DevEx** | Jugadores simultáneos / usuarios activos diarios / pagadores únicos mensuales / Developer Exchange |
 | **PV** | Pendiente de verificación |

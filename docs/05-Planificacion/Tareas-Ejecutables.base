@@ -5,7 +5,7 @@ filters:
 formulas:
   esperando_a: list(depende_de).filter(link(value).asFile().properties.estado != "hecha").join(", ")
   deps_pendientes: list(depende_de).filter(link(value).asFile().properties.estado != "hecha").length
-  ejecutable: estado == "lista" && list(depende_de).filter(link(value).asFile().properties.estado != "hecha").length == 0
+  ejecutable: estado == "lista" && txx_autorizada == true && list(depende_de).filter(link(value).asFile().properties.estado != "hecha").length == 0
 properties:
   file.name:
     displayName: Tarea

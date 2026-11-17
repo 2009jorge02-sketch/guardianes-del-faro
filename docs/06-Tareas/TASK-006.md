@@ -6,6 +6,8 @@ prioridad: alta
 fase: 1
 depende_de: [TASK-004, TASK-005]
 responsable: Codex
+txx: T05
+txx_autorizada: false
 creado: 2026-11-14
 tipo: tarea-codex
 fecha_actualizacion: 2026-11-14
@@ -20,7 +22,7 @@ Reglas y cifras: [[Mecanicas]] §Linterna. Remotes `BeamInput` y `BeamState`: [[
 
 ## Requisitos
 1. **Cliente** `BeamController`: envía `BeamInput {on, dir}` a ≤20 Hz **solo cuando cambian o cada 50 ms mientras está encendida**; dibuja el haz del jugador local y de los demás (a partir de `BeamState`) con un cono translúcido neón ámbar + luz puntual; feedback inmediato (<100 ms) al pulsar.
-2. **Servidor** `BeamService`: mantiene `{on, dir, charge, overheatUntil}` por jugador; valida entrada ([[Seguridad]]: tipos, `dir` finita y unitaria, rate-limit 25 msg/s, no «Apagado», estado `Night`); a 10 Hz calcula impacto: enemigo dentro de cono 35° y alcance 28 desde la posición del jugador ⇒ `EnemyService.damage(id, 12*0.1)`.
+2. **Servidor** `BeamService`: mantiene `{on, dir, charge, overheatUntil}` por jugador; valida entrada ([[Seguridad]]: tipos, `dir` finita y unitaria, rate-limit 25 msg/s, jugador activo, estado `Night`); a 10 Hz calcula impacto: enemigo dentro de cono 35° y alcance 28 desde la posición del jugador ⇒ `EnemyService.damage(id, 12*0.1)`.
 3. Carga 100: gasto 15/s, recarga 25/s tras 0,5 s apagada, sobrecalentado 1,5 s al llegar a 0 (valores de `Config`). Replicar `charge` al cliente propietario por atributo del jugador.
 4. Marcar enemigos iluminados (`lit = true` ese tick) para la regla de velocidad de [[TASK-005]].
 5. Difundir `BeamState` (UnreliableRemoteEvent) a los demás clientes a ≤10 Hz.

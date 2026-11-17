@@ -21,7 +21,7 @@ fecha_actualizacion: 2026-11-14
 Descrita en [[Arte-UI-Audio]] §Interfaz y enlazada con el [[GDD]].
 
 ## Elementos y comportamiento
-Joystick izquierdo, botón grande derecho de linterna, arrastre del pulgar derecho para apuntar (esquemas A/B), botón contextual del Foco Mayor. Controles en [[Mecanicas]].
+Joystick izquierdo, botón grande derecho de linterna, arrastre del pulgar derecho para apuntar (esquemas A/B), botón contextual del Foco Mayor. **Añadir (T10/T14):** botón contextual de rescatar/reanimar. Controles en [[Mecanicas]].
 
 ## Tarea técnica y estado
 Riesgo R11 ([[Riesgos]]): requiere prueba en móvil real.

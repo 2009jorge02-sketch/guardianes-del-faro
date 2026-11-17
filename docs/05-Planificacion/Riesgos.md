@@ -17,6 +17,8 @@ actualizado: 2026-11-14
 | R9 | Git no disponible en el PATH | Alta | Medio | Git 2.56.1 ya instalado; terminales antiguas necesitan refrescar PATH ([[Setup-Entorno]]) | Resuelto |
 | R10 | Profundidad insuficiente del apuntado de luz | Media | Alto | Cruce de haces, enemigos con contramedidas, cartas de estilo; [[VALIDACION-PROTOTIPO]] | Abierto |
 | R11 | Control táctil insuficiente | Media | Alto | Esquemas A/B y prueba en móvil real | Abierto |
+| R12 | Buen juego pero ingresos insuficientes (escenario central < 100 €/mes, [[Modelo-Economico]]) | Alta | Alto | Escalera de precios, analítica comercial temprana, puerta comercial tras Beta | Abierto |
+| R13 | Sin adquisición propia el juego no recibe tráfico | Alta | Alto | [[Adquisicion-Organica]]: clips, comunidad, pruebas cerradas; medir embudo | Abierto |
 
 ## Decisiones pendientes del usuario
 1. Aprobar el concepto [[ADR-001-concepto]] (nombre provisional).

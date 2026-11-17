@@ -43,10 +43,11 @@ Servicios y controladores son módulos con `Init()` y `Start()`; sin globales; d
 | BeamService | Valida entrada de linterna, Carga, cálculo de impactos cono→enemigos |
 | SpotlightService | Foco Mayor (ocupación, modo auto/manual) |
 | CardService | Ofertas, votos, aplicación de efectos |
-| PlayerStateService | «Apagado», inmunidad, spawn |
+| PlayerStateService | Salud y estados autoritativos (activo, derribado, eliminado), rescate y reanimación, spawn (D5/D15; base en T05, completo en T10) |
 | MapBuilder | Genera la isla greybox por código |
 | DataService (Fase 2) | Persistencia (DataStore con sesión bloqueada y reintentos) |
-| RewardService (Fase 2) | Luz y Cristales al terminar la partida |
+| RewardService (Fase 2) | Experiencia de Guardián y Monedas del Faro (persistentes) al terminar la partida |
+| MatchResourceService (T10) | Saldo compartido de Cristales de Luz de la partida: ingresos y gastos (reanimación, defensa); se reinicia en cada partida, no persiste |
 
 ## Cliente
 Entrada, visuales del haz, HUD, cámara, efectos y audio. **El cliente nunca decide daño, recompensas, estado de partida ni economía.**
@@ -55,7 +56,7 @@ Entrada, visuales del haz, HUD, cámara, efectos y audio. **El cliente nunca dec
 Remotes definidos en `Shared/Remotes` (ver [[Cliente-Servidor]]). El estado de partida se replica por `RemoteEvent` de cambio de estado y atributos de `ReplicatedStorage`/`Workspace` mínimos.
 
 ## Persistencia (Fase 2)
-Un perfil por jugador: `{ version, luz, cristales, desbloqueos, equipado, estadisticas }`. DataStore con reintentos y bloqueo de sesión; guardar al terminar partida y al salir; esquema versionado con migraciones. Respetar límites ([[Politicas-y-Limites]]).
+Un perfil por jugador: `{ version, xp, monedasFaro, cartas, desbloqueos, equipado, estadisticas }` (los Cristales de Luz **no** se guardan). DataStore con reintentos y bloqueo de sesión; guardar al terminar partida y al salir; esquema versionado con migraciones. Respetar límites ([[Politicas-y-Limites]]).
 
 ## Errores
 `pcall` en I/O (DataStore, Marketplace); registro con prefijo `[Faro]` y niveles; si falla el guardado, reintentar y avisar discretamente sin perder la partida.

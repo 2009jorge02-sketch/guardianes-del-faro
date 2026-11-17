@@ -1,11 +1,13 @@
 ---
 id: TASK-005
-titulo: EnemyService — spawn, movimiento por lotes y enemigo Sombra
+titulo: EnemyService — spawn, movimiento por lotes y enemigo Sombra Rastreadora (antes «Sombra»)
 estado: lista
 prioridad: alta
 fase: 1
 depende_de: [TASK-002, TASK-003]
 responsable: Codex
+txx: T05
+txx_autorizada: false
 creado: 2026-11-14
 tipo: tarea-codex
 fecha_actualizacion: 2026-11-14

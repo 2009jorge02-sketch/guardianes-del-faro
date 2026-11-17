@@ -21,7 +21,7 @@ fecha_actualizacion: 2026-11-14
 Descrita en [[Arte-UI-Audio]] §Interfaz y enlazada con el [[GDD]].
 
 ## Elementos y comportamiento
-3 tarjetas grandes con previsualización del efecto; 15 s para elegir; elección por clic, teclas 1-2-3 o toque. Cartas en [[Mecanicas]].
+3 tarjetas grandes con previsualización del efecto; votación de equipo dentro del descanso de 25 s (cierre 5 s antes); muestra el voto propio, los votos emitidos, el tiempo restante y el resultado compartido; no votar = abstención; desempate según [[Mecanicas]]; elección por clic, teclas 1-2-3 o toque. Cartas en [[Mecanicas]].
 
 ## Tarea técnica y estado
 Congelada hasta validar el prototipo ([[ADR-004-validacion-concepto]]).

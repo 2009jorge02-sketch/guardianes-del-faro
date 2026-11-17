@@ -21,10 +21,10 @@ fecha_actualizacion: 2026-11-14
 Descrita en [[Arte-UI-Audio]] §Interfaz y enlazada con el [[GDD]].
 
 ## Elementos y comportamiento
-Rejilla por categorías (linterna, haz, faro, mascota, título); sin ventanas emergentes de venta. Ética en [[Monetizacion]].
+Rejilla por categorías: cartas permanentes (precio en Monedas del Faro y en Robux, misma carta) y cosméticos (linterna, haz, faro, mascota, título; desbloqueables solo por Robux, lo básico gratis). Nunca se venden reanimaciones ni Cristales de Luz. Precios provisionales en [[Monetizacion]]. Sin ventanas emergentes de venta. Ética en [[Monetizacion]].
 
 ## Tarea técnica y estado
-Fase 2-3; sin tarea formal.
+Diseño en T11/T13, implementación en T12/T14 (tras la puerta de ADR-004).
 
 ## Móvil y accesibilidad
 Botones ≥ 48 px, texto ≥ 16 px equivalente, soporte teclado/ratón, táctil y mando ([[Arte-UI-Audio]]). Accesibilidad: [[Experiencia-Jugador]].

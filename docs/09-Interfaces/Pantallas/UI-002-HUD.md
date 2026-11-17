@@ -21,7 +21,7 @@ fecha_actualizacion: 2026-11-14
 Descrita en [[Arte-UI-Audio]] §Interfaz y enlazada con el [[GDD]].
 
 ## Elementos y comportamiento
-Barra de Integridad del Faro (arriba centro), «Noche N/5» y temporizador, barra de Carga junto al botón de linterna, contador de Sombras destruidas, iconos de cartas activas.
+Barra de Integridad del Faro (arriba centro), «Noche N/5» y temporizador, barra de Carga junto al botón de linterna, contador de Sombras destruidas, iconos de cartas activas. **Añadir (D5/D15, T13/T14):** salud propia, estado de compañeros (derribado/eliminado), saldo compartido de Cristales de Luz y aviso de gasto.
 
 ## Tarea técnica y estado
 Mínimo en Fase 1 ([[TASK-009]]); iconos de cartas llegan con [[TASK-011]].
